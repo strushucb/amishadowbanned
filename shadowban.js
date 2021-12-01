@@ -25,7 +25,7 @@ class MagicEightBall extends React.Component {
     if (this.state.userInput) {
       const d = new Date();
       this.setState({
-        randomIndex: Math.abs((this.hashCode(this.state.userInput.replace(/@| |/gi, "")) + d.getMonth() + d.getFullYear() + d.getDate()) % 20) + 1,
+        randomIndex: Math.abs((this.hashCode(this.state.userInput.replace(/@| |/gi, "").toLowerCase()) + d.getMonth() + d.getFullYear() + d.getDate()) % 20) + 1,
         userInput: ''
       });
     }
